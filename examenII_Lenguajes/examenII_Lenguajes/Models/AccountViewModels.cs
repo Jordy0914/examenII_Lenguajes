@@ -7,7 +7,7 @@ namespace examenII_Lenguajes.Models
     {
         [Required]
         [Display(Name = "Email")]
-        public string Email { get; set; }
+        public string email { get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -42,23 +42,25 @@ namespace examenII_Lenguajes.Models
     public class ForgotViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
+        [Display(Name = "Correo Electronico")]
+        public string email { get; set; }
     }
 
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
+        [Display(Name = "Correo Electronico")]
         [EmailAddress]
-        public string Email { get; set; }
+        public string email { get; set; }
+
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
-        public string Password { get; set; }
+        [Display(Name = "Contraseña")]
+        public string password { get; set; }
 
-        [Display(Name = "Remember me?")]
+
+        [Display(Name = "Recordar Contraseña")]
         public bool RememberMe { get; set; }
     }
 
@@ -66,18 +68,18 @@ namespace examenII_Lenguajes.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
+        [Display(Name = "Correo Electronico")]
+        public string email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 8)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
-        public string Password { get; set; }
+        [Display(Name = "Contraseña")]
+        public string password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Confirmar Contraseña")]
+        [Compare("Password", ErrorMessage = "Las contraseña no coinciden")]
         public string ConfirmPassword { get; set; }
     }
 
@@ -86,13 +88,13 @@ namespace examenII_Lenguajes.Models
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
-        public string Email { get; set; }
+        public string email { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
-        public string Password { get; set; }
+        public string password { get; set; }
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
@@ -107,6 +109,6 @@ namespace examenII_Lenguajes.Models
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
-        public string Email { get; set; }
+        public string email { get; set; }
     }
 }
