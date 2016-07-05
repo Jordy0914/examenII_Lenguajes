@@ -12,7 +12,7 @@ namespace examenII_Lenguajes.Controllers
 {
     public class EstudiantesController : Controller
     {
-        private DBExamenContext db = new DBExamenContext();
+        private DBExamenContext1 db = new DBExamenContext1();
 
         // GET: Estudiantes
         public ActionResult Index()

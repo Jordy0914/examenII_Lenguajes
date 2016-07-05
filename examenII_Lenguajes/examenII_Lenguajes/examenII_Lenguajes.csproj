@@ -176,12 +176,36 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ModelBDExamen1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBDExamen1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelBDExamen1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBDExamen1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelBDExamen1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBDExamen1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\UsuarioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="tbCurso.cs">
+      <DependentUpon>ModelBDExamen1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbEstudiante.cs">
+      <DependentUpon>ModelBDExamen1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbUsuario.cs">
+      <DependentUpon>ModelBDExamen1.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -190,8 +214,25 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="ModelBDExamen1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelBDExamen1.edmx</DependentUpon>
+      <LastGenOutput>ModelBDExamen1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelBDExamen1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelBDExamen1.edmx</DependentUpon>
+      <LastGenOutput>ModelBDExamen1.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="ModelBDExamen1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelBDExamen1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="ModelBDExamen1.edmx.diagram">
+      <DependentUpon>ModelBDExamen1.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
