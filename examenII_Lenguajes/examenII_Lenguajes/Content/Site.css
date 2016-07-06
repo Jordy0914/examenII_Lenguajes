@@ -23,6 +23,19 @@ textarea {
     max-width: 280px;
 }
 
+/*Important toma este estrictamente para que lo use*/
+/*a para href*/
+.custom-nav-bar > li > a{
+    color: #fff !important; 
+    font-weight:bold;
+}
+
+/*Pseudoclase*/
+.custom-nav-bar > li > a:hover{
+    background:#ff6a00 !important;
+    transition: all .4s ease-in;
+    /*width: 300px;*/
+}
 
 .custom-btn{
     background:#512DA8;
@@ -38,3 +51,31 @@ textarea {
     background: #607D8B;
     transition: all .4s ease-in;
 }
+
+.custom-header{
+    width: 52%;
+    background: url(img/n-community-icon-v1.png) no-repeat;
+    height: 300px;
+    background-size: cover;
+}
+
+.custom-footer-link > a {
+    display: block;
+    text-decoration: none;
+    background: #727272;
+    color: #fff;
+    font-weight: bold;
+    width: 7em;
+    padding: 0.3em 1em;
+    transition: all .4s ease-in;
+}
+
+.custom-footer-link > a:hover{
+    background:#212121;
+    transition: all .4s ease-in;
+}
+
+#rememberMe{
+    margin: 12px 0 0;
+}
+

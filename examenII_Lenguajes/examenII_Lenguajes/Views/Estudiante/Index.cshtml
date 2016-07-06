@@ -1,15 +1,12 @@
 ﻿@model IEnumerable<examenII_Lenguajes.tbEstudiante>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Mant. Estudiantes";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<h2>Mantenimiento de Estudiantes</h2>
+<p>Listado General de Estudiantes: </p>
 <table class="table">
     <tr>
         <th>
@@ -42,9 +39,9 @@
             @Html.DisplayFor(modelItem => item.apellido2)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idEstudiante }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idEstudiante }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idEstudiante })
+            @Html.ActionLink("Modificar", "Edit", new { id=item.idEstudiante }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.idEstudiante }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.idEstudiante })
         </td>
     </tr>
 }
