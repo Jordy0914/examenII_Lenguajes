@@ -12,17 +12,17 @@ using System.Web.Security;//seguridad a nivel asp
 
 namespace examenII_Lenguajes.Controllers
 {
-    public class UsuariosController : Controller
+    public class UsuarioController : Controller
     {
-        private DBExamenEntities db = new DBExamenEntities();
+        private DBExamenContext1 db = new DBExamenContext1();
 
-        // GET: Usuarios
+        // GET: Usuario
         public ActionResult Index()
         {
             return View(db.tbUsuario.ToList());
         }
 
-        // GET: Usuarios/Details/5
+        // GET: Usuario/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,18 +37,18 @@ namespace examenII_Lenguajes.Controllers
             return View(tbUsuario);
         }
 
-        // GET: Usuarios/Create
-        public ActionResult Create()
+        // GET: Usuario/Create
+        public ActionResult Registro()
         {
             return View();
         }
 
-        // POST: Usuarios/Create
+        // POST: Usuario/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idUsuario,email,password,nombre,direccion,telefono")] tbUsuario tbUsuario)
+        public ActionResult Registro([Bind(Include = "idUsuario,email,password,nombre,direccion,telefono")] tbUsuario tbUsuario)
         {
             if (ModelState.IsValid)
             {
@@ -60,7 +60,7 @@ namespace examenII_Lenguajes.Controllers
             return View(tbUsuario);
         }
 
-        // GET: Usuarios/Edit/5
+        // GET: Usuario/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -75,7 +75,7 @@ namespace examenII_Lenguajes.Controllers
             return View(tbUsuario);
         }
 
-        // POST: Usuarios/Edit/5
+        // POST: Usuario/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -91,7 +91,7 @@ namespace examenII_Lenguajes.Controllers
             return View(tbUsuario);
         }
 
-        // GET: Usuarios/Delete/5
+        // GET: Usuario/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -106,7 +106,7 @@ namespace examenII_Lenguajes.Controllers
             return View(tbUsuario);
         }
 
-        // POST: Usuarios/Delete/5
+        // POST: Usuario/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -127,10 +127,15 @@ namespace examenII_Lenguajes.Controllers
         }
 
 
+        [HttpGet]//ejecuta la solicitud del usuario
+        public ActionResult Logeo()//se cambia lo que dice index por que ocupamos
+        {
+            return View();
+        }
 
         [HttpPost]
-
-        public ActionResult Logeo(Models.LogeoUsuario user, String retornarUrl)
+        [ValidateAntiForgeryToken]
+        public ActionResult Logeo(tbUsuario user, String retornarUrl)
         {
             if (ModelState.IsValid)
             {
@@ -148,7 +153,7 @@ namespace examenII_Lenguajes.Controllers
 
                     else
                     {
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index","Home");
 
                     }//fin del else
 
@@ -167,14 +172,14 @@ namespace examenII_Lenguajes.Controllers
         }//fin del metodo Logeo 
 
 
-        public bool mValidarAcceso(String Email, String password)
+        public bool mValidarAcceso(String email, String password)
         {
             String encriptado;
             bool retorno = false;
 
-            using (var db = new DBExamenEntities())
+            using (var db = new DBExamenContext1())
             {
-                var user = db.tbUsuario.FirstOrDefault(u => u.email == Email);//primero entra el campo de la tabla y luego el parametro
+                var user = db.tbUsuario.FirstOrDefault(u => u.email == email);//primero entra el campo de la tabla y luego el parametro
                 if (user != null)
                 {
                     encriptado = user.password;
@@ -190,6 +195,5 @@ namespace examenII_Lenguajes.Controllers
             return retorno;
 
         }//fin del metodo validarDatos
-
     }
 }
