@@ -10,17 +10,17 @@ using examenII_Lenguajes;
 
 namespace examenII_Lenguajes.Controllers
 {
-    public class EstudiantesController : Controller
+    public class EstudianteController : Controller
     {
         private DBExamenContext1 db = new DBExamenContext1();
 
-        // GET: Estudiantes
+        // GET: Estudiante
         public ActionResult Index()
         {
             return View(db.tbEstudiante.ToList());
         }
 
-        // GET: Estudiantes/Details/5
+        // GET: Estudiante/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,13 +35,13 @@ namespace examenII_Lenguajes.Controllers
             return View(tbEstudiante);
         }
 
-        // GET: Estudiantes/Create
+        // GET: Estudiante/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Estudiantes/Create
+        // POST: Estudiante/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -58,7 +58,7 @@ namespace examenII_Lenguajes.Controllers
             return View(tbEstudiante);
         }
 
-        // GET: Estudiantes/Edit/5
+        // GET: Estudiante/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,7 +73,7 @@ namespace examenII_Lenguajes.Controllers
             return View(tbEstudiante);
         }
 
-        // POST: Estudiantes/Edit/5
+        // POST: Estudiante/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -89,7 +89,7 @@ namespace examenII_Lenguajes.Controllers
             return View(tbEstudiante);
         }
 
-        // GET: Estudiantes/Delete/5
+        // GET: Estudiante/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +104,7 @@ namespace examenII_Lenguajes.Controllers
             return View(tbEstudiante);
         }
 
-        // POST: Estudiantes/Delete/5
+        // POST: Estudiante/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
