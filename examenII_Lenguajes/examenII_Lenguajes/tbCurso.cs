@@ -6,17 +6,32 @@
 //     Los cambios manuales en este archivo se sobrescribirán si se regenera el código.
 // </auto-generated>
 //------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 
 namespace examenII_Lenguajes
 {
-    using System;
-    using System.Collections.Generic;
-    
     public partial class tbCurso
     {
+        [Required] //Dato requerido o obligatorio
+        [Display(Name = "Id Curso:")]
         public int idCurso { get; set; }
+        [Required] //entra en validacion el campo
+        //le indico que es un string de 100, y ademas no le permito caracteres extraños
+        [RegularExpression(@"^[a-zA-Z''-'\s]{1,100}$", ErrorMessage = "Caracteres inválidos.")]
+        [StringLength(100)]
+        [Display(Name = "Nombre:")]
         public string nombre { get; set; }
+        [Required] //Dato requerido o obligatorio
+        [Display(Name = "Creditos:")]
         public int creditos { get; set; }
+        [Required] //entra en validacion el campo
+        //le indico que es un string de 100, y ademas no le permito caracteres extraños
+        [RegularExpression(@"^[a-zA-Z''-'\s]{1,100}$", ErrorMessage = "Caracteres inválidos.")]
+        [StringLength(100)]
+        [Display(Name = "Descripcion:")]
         public string descripcion { get; set; }
     }
 }
