@@ -312,7 +312,7 @@ html {
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.428571429;
   color: #333333;
   background-color: #ffffff;
@@ -587,8 +587,8 @@ ol ol {
 
 .list-inline > li {
   display: inline-block;
-  padding-right: 5px;
-  padding-left: 5px;
+  padding-right: 0px;
+  padding-left: 0px;
 }
 
 dl {
@@ -4025,7 +4025,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar {
   position: relative;
   z-index: 1000;
-  min-height: 50px;
+  min-height: 60px;
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
@@ -4144,8 +4144,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .container > .navbar-header,
 .container > .navbar-collapse {
-  margin-right: -15px;
-  margin-left: -15px;
+  margin-right: -105px;
+  margin-left: -105px;
 }
 
 @media (min-width: 768px) {
@@ -4240,13 +4240,17 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-nav {
   margin: 7.5px -15px;
+
 }
 
 .navbar-nav > li > a {
-  padding-top: 10px;
+  padding-top: 100px;
   padding-bottom: 10px;
   line-height: 20px;
 }
+
+		
+
 
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {
@@ -4285,6 +4289,47 @@ textarea.input-group-sm > .input-group-btn > .btn {
   }
 }
 
+.nav {
+				width:200px; /*Le establecemos un ancho*/
+				margin:0 au; /*Centramos automaticamente*/
+			}
+ 
+			.nav > li {
+				float:left;
+			}
+			
+			.nav li a {
+				background-color:#222222;
+				color:white;
+				text-decoration:none;
+				padding:15px 12px;
+				display:block;
+			
+			}
+			
+			.nav li a:hover {
+				background-color:#434343;
+			}
+			
+			.nav li ul {
+				display:none;
+				position:absolute;
+				min-width:140px;
+				margin-right:-350px;
+			}
+			
+			.nav li:hover > ul {
+				display:block;
+			}
+			
+			.nav li ul li {
+				position:relative;
+			}
+			
+			.nav li ul li ul {
+				right:-140px;
+				top:0px;
+			}
 @media (min-width: 768px) {
   .navbar-left {
     float: left !important;
@@ -4501,12 +4546,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse {
-  background-color: #222222;
-  border-color: #080808;
+  background-color: #03A9F4;
+  border-color: #2196F3;
 }
 
 .navbar-inverse .navbar-brand {
-  color: #999999;
+  color: #ffffff;
 }
 
 .navbar-inverse .navbar-brand:hover,
@@ -6792,6 +6837,7 @@ td.visible-print {
   display: none !important;
 }
 
+
 @media print {
   .visible-print {
     display: block !important;
@@ -6814,3 +6860,67 @@ td.visible-print {
     display: none !important;
   }
 }
+
+			*{
+				margin:0px;
+				padding:0px;
+			}
+			
+			
+			#header {
+				margin:auto;
+				width:500px;
+				font-family:Arial, Helvetica, sans-serif;
+			}
+			
+			ul, ol {
+				list-style:none;
+			}
+			
+			.nav {
+				width:1000px; /*Le establecemos un ancho*/
+				margin:0 auto; /*Centramos automaticamente*/
+				
+			}
+ 
+			.nav > li {
+				float:left;
+				
+			}
+			
+			.nav li a {
+				background-color:#03A9F4;
+				color:#fff;
+				text-decoration:none;
+				padding:15px 15px;
+				display:block;
+			}
+			
+			.nav li a:hover {
+				background-color:#2196F3;
+			}
+			
+			.nav li ul {
+				display:none;
+				position:absolute;
+				min-width:140px;
+			}
+			
+			.nav li:hover > ul {
+				display:block;
+			}
+			
+			.nav li ul li {
+				position:relative;
+			}
+			
+			.nav li ul li ul {
+				right:-140px;
+				top:0px;
+			}
+			
+			
+			
+
+
+
