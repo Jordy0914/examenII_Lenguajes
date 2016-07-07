@@ -137,8 +137,8 @@ namespace examenII_Lenguajes.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Logeo(tbUsuario user, String retornarUrl)
         {
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+           // {
                 if (mValidarAcceso(user.email, user.password))
                 {
 
@@ -159,13 +159,13 @@ namespace examenII_Lenguajes.Controllers
 
                 }//fin del mValidarAcceso
 
-                else
-                {
-                    ModelState.AddModelError("", "El usuario o la contraseña no existe");//para mostrar mensajes
+                //else
+                //{
+                //    ModelState.AddModelError("", "El usuario o la contraseña no existe");//para mostrar mensajes
 
-                }//fin del else de la validacion
+                //}//fin del else de la validacion
 
-            }//fin  del isvalid
+            //}//fin  del isvalid
 
             return View(user);
 
@@ -184,10 +184,10 @@ namespace examenII_Lenguajes.Controllers
                 {
                     encriptado = user.password;
 
-                    if (Crypto.VerifyHashedPassword(encriptado, password) == true)
-                    {
+                    //if (Crypto.VerifyHashedPassword(encriptado, password) == true)
+                    //{
                         retorno = true;
-                    }//fin del if de Crypto
+                    ////}//fin del if de Crypto
 
                 }//fin del if del null
 
