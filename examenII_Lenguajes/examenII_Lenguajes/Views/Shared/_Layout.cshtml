@@ -23,22 +23,21 @@
                 <ul class="nav">
                     <img style='position:absolute; left: 50px; bottom: -25px;' src='images\ucr.png'>
 					<li style='position:absolute; left: 490px; top:4px' >@Html.ActionLink("Inicio", "Index", "Home")
-                    <li style='position:absolute; left: 550px; top:4px' >@Html.ActionLink("Estudiantes", "Create", "Estudiantes")
+                    <li style='position:absolute; left: 550px; top:4px' >@Html.ActionLink("Estudiantes", "Create", "Estudiante")
                         <ul>
-							<li>@Html.ActionLink("Crear", "Create", "Estudiantes")</li>
-							<li>@Html.ActionLink("Modificar", "Create", "Estudiantes")</li>
-							<li>@Html.ActionLink("Eliminar", "Create", "Estudiantes")</li>
-							<li>@Html.ActionLink("Consultar", "Create", "Estudiantes")</li>
+							<li>@Html.ActionLink("Crear", "Create", "Estudiante")</li>
+							<li>@Html.ActionLink("Mantenimiento", "Index")</li>
 						</ul>
                     </li>
                     <li style='position:absolute; left: 650px; top:4px'>@Html.ActionLink("Cursos", "Create", "Cursos")
 						<ul>
-							<li>@Html.ActionLink("Crear", "Create", "Estudiantes")</li>
-							<li>@Html.ActionLink("Consultar", "Create", "Estudiantes")</li>
+							<li>@Html.ActionLink("Crear", "Create", "Cursos")</li>
+							<li>@Html.ActionLink("Consultar", "Index")</li>
+                         
 						</ul>
 					</li>	
-                    <li style='position:absolute; right: 320px; top:4px'>@Html.ActionLink("Registrase", "Create", "Usuarios", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-                    <li  style='position:absolute; right: 200px; top:4px'>@Html.ActionLink("Iniciar Sesion", "Logeo", "Usuarios", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                    <li style='position:absolute; right: 320px; top:4px'>@Html.ActionLink("Registrase", "Registro", "Usuario", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                    <li  style='position:absolute; right: 200px; top:4px'>@Html.ActionLink("Iniciar Sesion", "Logeo", "Usuario", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

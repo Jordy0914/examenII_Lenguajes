@@ -54,7 +54,7 @@ namespace examenII_Lenguajes.Controllers
             {
                 db.tbUsuario.Add(tbUsuario);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Home");
             }
 
             return View(tbUsuario);

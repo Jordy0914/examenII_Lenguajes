@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<examenII_Lenguajes.tbCurso>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Listado";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Listado General de Cursos:</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Curso", "Create")
 </p>
 <table class="table">
     <tr>
@@ -36,9 +36,7 @@
             @Html.DisplayFor(modelItem => item.descripcion)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idCurso }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idCurso }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idCurso })
+            @Html.ActionLink("Detalles por \"ID\"", "Details", new { id=item.idCurso }) |
         </td>
     </tr>
 }
