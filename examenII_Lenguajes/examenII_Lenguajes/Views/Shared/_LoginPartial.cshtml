@@ -15,7 +15,9 @@
 }
 else
 {
-    @*<ul class="nav navbar-nav navbar-right">
-        
-    </ul>*@
+    <ul class="nav navbar-nav navbar-right">
+                    <li style='position:absolute; right: 320px; top:4px'>@Html.ActionLink("Registrase", "Registro", "Usuario", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                    <li  style='position:absolute; right: 200px; top:4px'>@Html.ActionLink("Iniciar Sesion", "Logeo", "Usuario", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
 }
+
